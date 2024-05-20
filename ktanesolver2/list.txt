@@ -1,0 +1,46 @@
+--Pre TTKS--
+OK	Big Circle
+OK	Who's on First
+OK	Password
+OK	Wires
+OK	Button
+OK	Listening
+OK	Word Scramble
+OK	Morse Code
+>.	Password Translated
+OK	Two Bits
+--	English Test
+OK	Crazy Talk
+OK	Laundry
+OK	Keypad
+OK	Anagrams
+OK	Round Keypad
+OK	Color Flash
+--	Mastermind
+OK	Poker
+OK	Skewed Slots
+OK	Shape Shift
+OK	Orientation Cube
+OK	Turn The Keys
+NG	Combination Lock
+NG	Bitwise Operations
+NG	Cryptography
+--	Mashematics
+NG	Simon States
+NG	Yahtzee
+NG	Word Search
+NG	Gamepad
+NG	Rubik's Cube
+NG	Safety Safe
+NG	Semaphore
+NG	LED Encryption
+NG	Mortal Kombat
+NG	Colored Squares
+NG	Mystic Square
+NG	Waste Management
+NG	Point of Order
+NG	Complicated Wires
+NG	Minesweeper
+NG	Chess
+NG	Perplexing Wires
+NG	Maintenance
