@@ -22,3 +22,4 @@ from .orientationcube import orientationcube
 from .turnthekeys import turnthekeys
 from .combinationlock import combinationlock
 from .bitwiseoperations import bitwiseoperations
+from .cryptography import cryptography

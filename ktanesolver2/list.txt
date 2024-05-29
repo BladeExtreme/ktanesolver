@@ -23,8 +23,8 @@ OK	Shape Shift
 OK	Orientation Cube
 OK	Turn The Keys
 OK	Combination Lock
-NG	Bitwise Operations
-NG	Cryptography
+OK	Bitwise Operations
+OK	Cryptography
 --	Mashematics
 NG	Simon States
 NG	Yahtzee
