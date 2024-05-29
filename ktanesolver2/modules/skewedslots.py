@@ -18,7 +18,7 @@ class skewedslots(edgework):
             edgework (edgework): The edgework of the bomb
             initial (list [int, int, int]): The numbers that appears on the bomb. Index 0 represents the leftmost column
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__initial = self.__check(initial)
         self.__edit = self.__initial.copy()
     

@@ -43,7 +43,7 @@ class poker(edgework):
             rank (str): The rank of the card
             suit (str): The suit of the card
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__card = self.__check(rank.lower(), suit.lower())
 
     def __checkrule(self, state, condition, rule):

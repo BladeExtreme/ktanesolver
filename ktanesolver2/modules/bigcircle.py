@@ -32,7 +32,7 @@ class bigcircle(edgework):
             rotation (int, 0 or 1): Rotation of the module, 0 represents clockwise and 1 represents counter-clockwise
             solved (int): Solved modules on the bomb
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__rotation, self.__solved = self.__check(rotation, solved)
     
     def __iter(self, arr, p):

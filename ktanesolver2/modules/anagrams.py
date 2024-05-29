@@ -25,7 +25,7 @@ class anagrams(edgework):
             edgework (edgework): The edgework of the bomb
             word (str): The word that appears on the module
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__word = self.__check(word)
     
     def solve(self):

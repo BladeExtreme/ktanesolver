@@ -40,7 +40,7 @@ class shapeshift(edgework):
             edgework (edgework): The edgework of the bomb
             shape (list [str, str]): The shape of each half. Index 0 is the left half and index 1 is the right half. Accepts 'round', 'flat', 'point', 'ticket'
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__shape = self.__check(shape)
     
     def __calculate(self):

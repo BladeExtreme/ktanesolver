@@ -11,7 +11,7 @@ class button(edgework):
         }
 
     def __init__(self, edgework, color: str, label: str):
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__color, self.__label = self.__check(_colorcheck(color.lower()), label.lower())
     
     def __check(self, c, l):

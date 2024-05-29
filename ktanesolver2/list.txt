@@ -22,7 +22,7 @@ OK	Skewed Slots
 OK	Shape Shift
 OK	Orientation Cube
 OK	Turn The Keys
-NG	Combination Lock
+OK	Combination Lock
 NG	Bitwise Operations
 NG	Cryptography
 --	Mashematics

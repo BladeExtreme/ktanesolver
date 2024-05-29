@@ -43,7 +43,7 @@ class laundry(edgework):
             edgework (edgework): The edgework of the bomb
             solved (int): The total module solved
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__solved = self.__check(solved)
     
     def __calculate(self):

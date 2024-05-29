@@ -21,7 +21,7 @@ class wordscramble(edgework):
             edgework (edgework): The edgework of the bomb
             scrambled (list [str]): The scrambled letter that appears on the bomb
         '''        
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__letter = self.__check([a.lower() for a in scrambled])
     
     def __calculate(self, w):

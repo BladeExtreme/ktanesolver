@@ -28,7 +28,7 @@ class orientationcube(edgework):
             edgework (edgework): The edgework of the bomb
             position (str): The position of the eye in the module. Accepts only 'front', 'right', 'back', 'left'
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__position = self.__check(position)
     
     def __calculate(self):

@@ -37,7 +37,7 @@ class morsecode(edgework):
             edgework (edgework): The edgework of the bomb
             morse (List [str]): The morse code in the form of dots ('.') and dashes ('-')
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__morsecode = self.__check(morse)
     
     def solve(self):

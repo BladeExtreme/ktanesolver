@@ -18,7 +18,7 @@ class colorflash(edgework):
             word (list [str]): The words that appears on the module
             color (list [str]): The color of the word that appears on the module
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__word, self.__color = self.__check(word, color)
         self.__sequence = [[a,b] for a,b in zip(self.__word, self.__color)]
     

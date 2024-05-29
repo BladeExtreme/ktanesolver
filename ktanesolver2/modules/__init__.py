@@ -20,3 +20,5 @@ from .skewedslots import skewedslots
 from .shapeshift import shapeshift
 from .orientationcube import orientationcube
 from .turnthekeys import turnthekeys
+from .combinationlock import combinationlock
+from .bitwiseoperations import bitwiseoperations

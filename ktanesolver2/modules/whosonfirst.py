@@ -54,7 +54,7 @@ class whosonfirst(edgework):
             display (str): The word displayed on the module
 			buttons (list [str]): The word buttons on the module
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__display, self.__buttons = self.__check(display.lower(), [a.lower() for a in buttons])
     
     def __calculate(self, p):

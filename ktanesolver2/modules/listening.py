@@ -46,7 +46,7 @@ class listening(edgework):
     }
 
     def __init__(self, edgework: edgework, audio: str):
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__audio = self.__check(audio.lower())
     
     def __check(self, a):

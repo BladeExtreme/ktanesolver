@@ -20,7 +20,7 @@ class password(edgework):
             edgework (edgework): The edgework of the bomb
             letter (List [List [str]]): The possible letters for all 5 columns. There are 5 list representing 1 column of the letters. Each column list has 6 possible letters
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__letters = self.__check([[b.lower() for b in a] for a in letter])
     
     def __calculate(self):

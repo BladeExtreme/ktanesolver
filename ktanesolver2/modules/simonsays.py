@@ -24,7 +24,7 @@ class simonsays(edgework):
         Args:
             color (list): The color flash sequence of the module
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__color = self.__check([_colorcheck(a.lower()) for a in color])
 
     def __check(self, c):

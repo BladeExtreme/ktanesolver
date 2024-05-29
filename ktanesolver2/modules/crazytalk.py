@@ -28,7 +28,7 @@ class crazytalk(edgework):
             edgework (edgework): The edgework of the bomb
             word (str): The word that appears on the module. Use symbols, arrows uses minus sign. (Example: "<-", "1 3 2 4")
         '''
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__word = self.__check(word.lower())
     
     def solve(self):

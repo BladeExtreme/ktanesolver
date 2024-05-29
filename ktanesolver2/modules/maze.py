@@ -68,7 +68,7 @@ class maze(edgework):
     ]
     
     def __init__(self, edgework, maze: tuple, player: tuple, target: tuple):
-        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
+        super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__maze, self.__player, self.__target = self.__check(tuple([a.upper() for a in maze]), player.upper(), target.upper())
     
     def __check(self, m, p, t):
