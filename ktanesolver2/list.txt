@@ -26,7 +26,7 @@ OK	Combination Lock
 OK	Bitwise Operations
 OK	Cryptography
 --	Mashematics
-NG	Simon States
+OK	Simon States
 NG	Yahtzee
 NG	Word Search
 NG	Gamepad
