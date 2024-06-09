@@ -29,13 +29,13 @@ OK	Cryptography
 OK	Simon States
 NG	Yahtzee
 OK	Word Search
-NG	Gamepad
-NG	Rubik's Cube
-NG	Safety Safe
-NG	Semaphore
-NG	LED Encryption
-NG	Mortal Kombat
-NG	Colored Squares
+OK	Gamepad
+OK	Rubik's Cube
+OK	Safety Safe
+OK	Semaphore
+OK	LED Encryption
+OK	Mortal Kombat
+OK	Colored Squares
 NG	Mystic Square
 NG	Waste Management
 NG	Point of Order

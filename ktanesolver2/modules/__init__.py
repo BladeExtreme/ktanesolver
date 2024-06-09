@@ -24,5 +24,12 @@ from .combinationlock import combinationlock
 from .bitwiseoperations import bitwiseoperations
 from .cryptography import cryptography
 from .simonstates import simonstates
-#from .yahtzee import yahtzee
+# from .yahtzee import yahtzee
 from .wordsearch import wordsearch
+from .gamepad import gamepad
+from .rubikscube import rubikscube
+from .safetysafe import safetysafe
+from .semaphore import semaphore
+from .ledencryption import ledencryption
+from .mortalkombat import mortalkombat
+from .coloredsquares import coloredsquares

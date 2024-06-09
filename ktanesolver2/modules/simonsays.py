@@ -1,5 +1,5 @@
 from ..edgework import edgework
-from ..colordict import _colorcheck
+from ..tools.colordict import _colorcheck
 
 class simonsays(edgework):
     __rule = {

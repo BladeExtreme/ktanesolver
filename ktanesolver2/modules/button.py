@@ -1,5 +1,5 @@
 from ..edgework import edgework # type: ignore
-from ..colordict import _colorcheck # type: ignore
+from ..tools.colordict import _colorcheck # type: ignore
 
 class button(edgework):
     __rule = {

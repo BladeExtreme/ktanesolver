@@ -47,7 +47,7 @@ class bigcircle(edgework):
         point = self.__iter(['BOB', 'CAR', 'CLR'], 1) + self.__iter(['FRK', 'FRQ', 'MSA', 'NSA'], 2) + self.__iter(['SIG', 'SND', 'TRN'], 3) + (3*self.__solved) + (4 if self.batt%2 == 1 else -4)
         for a in self.ports:
             if 'PARALLEL' in a: point += -4 if 'SERIAL' in a else 5
-            if 'DVI-D' in a: point += 4 if 'RCA' in a else -5
+            if 'DVI-D' in a: point += 4 if 'STEREO RCA' in a else -5
         return point
         # not supporting custom indicators and ports
 

@@ -3,6 +3,7 @@ __colordict = {
     'b': 'blue',
     'g': 'green',
     'y': 'yellow',
+    'o': 'orange',
     'w': 'white',
     'k': 'black',
     'c': 'cyan',

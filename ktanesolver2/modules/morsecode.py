@@ -1,5 +1,5 @@
 from ..edgework import edgework
-from ..morsedict import _translate
+from ..tools.morsedict import _translate
 
 class morsecode(edgework):
     __bank = {
