@@ -24,3 +24,5 @@ from .combinationlock import combinationlock
 from .bitwiseoperations import bitwiseoperations
 from .cryptography import cryptography
 from .simonstates import simonstates
+#from .yahtzee import yahtzee
+from .wordsearch import wordsearch

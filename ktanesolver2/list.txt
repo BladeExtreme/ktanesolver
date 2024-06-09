@@ -28,7 +28,7 @@ OK	Cryptography
 --	Mashematics
 OK	Simon States
 NG	Yahtzee
-NG	Word Search
+OK	Word Search
 NG	Gamepad
 NG	Rubik's Cube
 NG	Safety Safe

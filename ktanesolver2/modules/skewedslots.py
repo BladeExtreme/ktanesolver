@@ -49,7 +49,7 @@ class skewedslots(edgework):
     def __calculate3(self, n):
         if 'SERIAL' in self._uniqueports: n += max([int(a) for a in self._sndigit])
         elif self.__initial.count(self.__initial[2]) > 1: return n
-        elif n >= 5: n = bin(n)[2:].count('1')
+        elif n >= 5: n = bin(self.__initial[-1])[2:].count('1')
         else: n+=1
         return n
 
