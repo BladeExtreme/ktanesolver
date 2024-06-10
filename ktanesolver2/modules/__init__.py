@@ -33,3 +33,7 @@ from .semaphore import semaphore
 from .ledencryption import ledencryption
 from .mortalkombat import mortalkombat
 from .coloredsquares import coloredsquares
+from .mysticsquare import mysticsquare
+from .wastemanagement import wastemanagement
+from .pointoforder import pointoforder
+from .complicatedwires import complicatedwires

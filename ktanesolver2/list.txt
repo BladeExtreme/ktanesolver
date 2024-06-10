@@ -36,10 +36,10 @@ OK	Semaphore
 OK	LED Encryption
 OK	Mortal Kombat
 OK	Colored Squares
-NG	Mystic Square
-NG	Waste Management
-NG	Point of Order
-NG	Complicated Wires
+OK	Mystic Square
+OK	Waste Management
+OK	Point of Order
+OK	Complicated Wires
 NG	Minesweeper
 NG	Chess
 NG	Perplexing Wires
