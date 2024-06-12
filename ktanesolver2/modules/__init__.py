@@ -37,3 +37,7 @@ from .mysticsquare import mysticsquare
 from .wastemanagement import wastemanagement
 from .pointoforder import pointoforder
 from .complicatedwires import complicatedwires
+from .minesweeper import minesweeper
+from .chess import chess
+from .perplexingwires import perplexingwires
+from .maintenance import maintenance

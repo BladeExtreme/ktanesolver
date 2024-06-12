@@ -40,7 +40,7 @@ OK	Mystic Square
 OK	Waste Management
 OK	Point of Order
 OK	Complicated Wires
-NG	Minesweeper
-NG	Chess
-NG	Perplexing Wires
-NG	Maintenance
+OK	Minesweeper
+OK	Chess
+OK	Perplexing Wires
+OK	Maintenance
