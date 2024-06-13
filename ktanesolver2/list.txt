@@ -47,7 +47,7 @@ OK	Maintenance
 OK	Visual Impairment
 OK	Broken Buttons
 OK	Colored Switches
-NG	Painting
+OK	Painting
 NG	Plumbing
 NG	Caesar Cipher
 NG	Extended Password

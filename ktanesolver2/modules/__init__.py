@@ -45,3 +45,4 @@ from .visualimpairment import visualimpairment
 from .brokenbuttons import brokenbuttons
 from .ledgrid import ledgrid
 from .coloredswitches import coloredswitches
+from .painting import painting
