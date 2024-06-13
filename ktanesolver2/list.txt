@@ -46,7 +46,7 @@ OK	Perplexing Wires
 OK	Maintenance
 OK	Visual Impairment
 OK	Broken Buttons
-NG	Colored Switches
+OK	Colored Switches
 NG	Painting
 NG	Plumbing
 NG	Caesar Cipher
