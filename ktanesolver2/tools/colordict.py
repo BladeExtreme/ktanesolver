@@ -9,7 +9,8 @@ __colordict = {
     'c': 'cyan',
     'm': 'magenta',
     'a': 'gray',
-    'p': 'purple'
+    'p': 'purple',
+    'i': 'pink'
 }
 
 def _colorcheck(a):
@@ -21,12 +22,12 @@ def _colorcheck(a):
                 except:
                     raise ValueError("Letter cannot be found on colordict")
             else:
-                if a not in [b for b in __colordict.values()]: raise ValueError("Color cannot be found on colordict")
+                if a not in [b for b in __colordict.values()]+['pink']: raise ValueError("Color cannot be found on colordict")
     elif isinstance(a, str) and len(a) == 1:
         try:
             a = __colordict.get(a)
         except:
             raise ValueError("Letter cannot be found on colordict")
-    elif isinstance(a, str) and a not in [b for b in __colordict.values()]:
+    elif isinstance(a, str) and a not in [b for b in __colordict.values()]+['pink']:
         raise ValueError("Color cannot be found on colordict")
     return a

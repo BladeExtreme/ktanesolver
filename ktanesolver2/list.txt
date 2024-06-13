@@ -33,7 +33,7 @@ OK	Gamepad
 OK	Rubik's Cube
 OK	Safety Safe
 OK	Semaphore
-NG	LED Grid
+OK	LED Grid
 OK	Mortal Kombat
 OK	Colored Squares
 OK	Mystic Square
