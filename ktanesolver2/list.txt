@@ -33,7 +33,7 @@ OK	Gamepad
 OK	Rubik's Cube
 OK	Safety Safe
 OK	Semaphore
-OK	LED Encryption
+NG	LED Grid
 OK	Mortal Kombat
 OK	Colored Squares
 OK	Mystic Square
@@ -44,3 +44,75 @@ OK	Minesweeper
 OK	Chess
 OK	Perplexing Wires
 OK	Maintenance
+OK	Visual Impairment
+OK	Broken Buttons
+NG	Colored Switches
+NG	Painting
+NG	Plumbing
+NG	Caesar Cipher
+NG	Extended Password
+NG	Blind Maze
+NG	Cruel Mastermind
+NG	Monsplode, Fight!
+NG	Boolean Venn Diagram
+NG	Only Connect
+NG	Fast Math
+NG	Algebra
+NG	Braille
+>.	Button Translated
+NG	Sink
+NG	Modules Against Humanity
+NG	Light Cycle
+NG	Screw
+NG	FizzBuzz
+NG	Poetry
+OK	Simon Says
+NG	The Swan
+NG	Mafia
+NG	Skyrim
+NG	Timezone
+NG	Hunting
+NG	Color Morse
+NG	Wire Placement
+NG	Radiator
+NG	Murder
+NG	Neutralization
+NG	Backgrounds
+NG	Faulty Backgrounds
+NG	Wire Sequence
+NG	Silly Slots
+NG	Mouse in the Maze
+NG	Flags
+NG	Symbolic Coordinates
+NG	Sea Shells
+NG	Color Generator
+NG	Sonic the Hedgehog
+NG	Logic
+NG	Color Math
+NG	Square Buttons
+NG	Astrology
+NG	Gridlock
+NG	Nonogram
+NG	Number Pad
+NG	Cheap Checkout
+NG	Chord Qualities
+NG	Battleship
+NG	Microcontroller
+NG	Switches
+>.	Who's on First Translated
+NG	Piano Keys
+NG	Morse-A-Maze
+NG	Monsplode Trading Card
+NG	Text Field
+NG	Creation
+NG	Follow the Leader
+NG	Adjacent Letters
+NG	Modern Cipher
+NG	Game of Life
+NG	Festive Piano Keys
+NG	Double-Oh
+NG	Foreign Exchange Rate
+NG	Curriculum
+OK	LED Encrypion
+-----------------
+NG	Cruel Piano Keys

@@ -58,4 +58,6 @@ class bigcircle(edgework):
         Returns:
             (str, str, str): The order of color presses in a form of tuple, where index 0 is the first and 2 is the last in the sequence
         '''
-        return tuple(self.__collist[int(self.__calculate()/3)]) if self.__rotation == 0 else tuple(self.__collist[int(self.__calculate()/3)][::-1])
+        tempsn = self.sn+self.sn[:0:-1]; ans = abs(self.__calculate())%len(tempsn)
+        ans = self.__collist[int(int(ord(tempsn[ans])-55)/3)] if tempsn[ans].isalpha() else self.__collist[int(int(tempsn[ans])/3)]
+        return tuple(ans if self.__rotation==0 else ans[::-1])
