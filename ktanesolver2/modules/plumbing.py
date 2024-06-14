@@ -18,8 +18,18 @@ class plumbing(edgework):
         inputs = [inputred, inputyel, inputgrn, inputblu]; inputs = list(map(lambda x: x>=1, inputs))
 
         outputred = (1 if [a for b in self.ports for a in b].count("SERIAL")>=1 else 0)+(1 if self.batt==1 else 0)-(1 if len(self._sndigit)>2 else 0)-(1 if inputs.count(True)>2 else 0)
-        outputgrn = (1 if )
-        # outputyel = 
+        outputgrn = (1 if inputs.count(True)==3 else 0)+(1 if len([a for b in self.ports for a in b])==3 else 0)-(1 if len([a for b in self.ports for a in b])>3 else 0)-(1 if len(self._sndigit)>3 else 0)
+        outputyel = (1 if len([a for b in self.ports for a in b])!=len(self._uniqueports) else 0)+(1 if '4' in self._sndigit or '8' in self._sndigit else 0)-(1 if '2' in self._sndigit else 0)-(1 if outputgrn>=1 else 0)
+        outputblu = (99 if outputred<1 and outputgrn<1 and outputyel<1 else 0)+(1 if all(inputs) else 0)+(1 if outputred<1 or outputgrn<1 or outputyel<1 else 0)-(1 if self.batt<2 else 0)-(1 if 'PARALLEL' not in self._uniqueports else 0)
+        outputs = [outputred, outputyel, outputgrn, outputblu];  outputs = list(map(lambda x: x>=1, outputs))
+
+        return tuple([['red','yellow','green','blue'][a] for a in range(len(inputs)) if inputs[a]]), tuple([['red','yellow','green','blue'][a] for a in range(len(outputs)) if outputs[a]])
     
     def solve(self):
+        '''
+        Find the Input/Output pipe color
+
+        Returns:
+            tuple (tuple (str), tuple (str)): The correct pipe to be connected to. Index 0 tuple are the input colored pipes that need to be connected while index 1 are the outputs
+        '''
         return self.__calculate()
