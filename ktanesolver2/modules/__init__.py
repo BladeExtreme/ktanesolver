@@ -47,3 +47,11 @@ from .ledgrid import ledgrid
 from .coloredswitches import coloredswitches
 from .painting import painting
 from .plumbing import plumbing
+from .caesarcipher import caesarcipher
+from .letterkeys import letterkeys
+from .monsplodefight import monsplodefight
+from .pianokeys import pianokeys
+from .symbolicpassword import symbolicpassword
+from .fastmath import fastmath
+from .wireplacement import wireplacement
+from .followtheleader import followtheleader
