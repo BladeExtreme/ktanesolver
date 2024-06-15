@@ -55,3 +55,6 @@ from .symbolicpassword import symbolicpassword
 from .fastmath import fastmath
 from .wireplacement import wireplacement
 from .followtheleader import followtheleader
+# from .battleship import battleship
+from .fizzbuzz import fizzbuzz
+from .perspectivepegs import perspectivepegs
