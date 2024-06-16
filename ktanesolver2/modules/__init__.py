@@ -59,3 +59,4 @@ from .followtheleader import followtheleader
 from .fizzbuzz import fizzbuzz
 from .perspectivepegs import perspectivepegs
 from .creation import creation
+from .doubleoh import doubleoh
