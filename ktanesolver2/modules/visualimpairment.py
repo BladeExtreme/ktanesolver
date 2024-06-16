@@ -28,8 +28,8 @@ class visualimpairment(edgework):
     
     def __conversion(self, l):
         convertedgrid = []
-        for a in range(1, len(l)):
-            convertedgrid.append([(1 if l[a][b-1]!=l[a][b] else 0)+(1 if l[a-1][b]!=l[a][b] else 0) for b in range(1, len(l[a]))])
+        for a in range(1, len(l)-1):
+            convertedgrid.append([(1 if l[a][b-1]!=l[a][b] else 0)+(1 if l[a-1][b]!=l[a][b] else 0)+(1 if l[a-1][b-1]!=l[a][b] else 0)+(1 if l[a-1][b+1]!=l[a][b] else 0)+(1 if l[a+1][b-1]!=l[a][b] else 0)+(1 if l[a+1][b+1]!=l[a][b] else 0) for b in range(1, len(l[a])-1)])
         return convertedgrid
 
     def __calculate(self):
@@ -110,7 +110,7 @@ class visualimpairment(edgework):
         converteddefaultgrid = []
         for a in range(len(grids)):
             converteddefaultgrid.append(self.__conversion(grids[a]))
-
+        
         ans = []; ansgrid = []
         for a in range(len(converteddefaultgrid)):
             if converteddefaultgrid[a] in convertedgrid:
@@ -128,13 +128,20 @@ class visualimpairment(edgework):
         
         return grouping
 
-    def solve(self):
+    def solve(self, grid:list|None=None, color:str|None=None):
         '''
         Solve the Visual Impairment module
 
+        Args:
+            grid (list [list, ...]): The gray-scaled image that appears on the module. Each variation of gray color should be interpreted using any number of your choice but must be consistent, otherwise the grid will not be found or the answer may/may not match up
+            color (str): The color of the squares that need to be pressed
         Returns:
             tuple (int, tuple): Index 0 is the number of the target color group that was represented on the gray-scaled color group. Index 1 are the squares that needed to be pressed. Each element represents the row and column of the square starting from 0.
         '''
+        if grid is not None and color is not None:
+            self.__grid, self.__color = self.__check(grid, color)
+        elif (grid is None) ^ (color is None):
+            raise TypeError("grid and color must be both None or have an argument")
         dictans = self.__calculate(); ans = []
         for a in range(len(self.__grid)):
             for b in range(len(self.__grid[a])):
