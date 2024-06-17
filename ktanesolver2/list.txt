@@ -48,9 +48,9 @@ OK	Visual Impairment
 OK	Broken Buttons
 OK	Colored Switches
 OK	Painting
-NG	Plumbing
-NG	Caesar Cipher
-NG	Extended Password
+OK	Plumbing
+OK	Caesar Cipher
+>.	Extended Password
 NG	Blind Maze
 NG	Cruel Mastermind
 NG	Monsplode, Fight!
@@ -114,5 +114,47 @@ NG	Double-Oh
 NG	Foreign Exchange Rate
 NG	Curriculum
 OK	LED Encrypion
------------------
+NG	S.E.T.
+NG	Letter Keys
+NG	Blind Alley
+>.	Morse Code Translated
+NG	Button Sequences
+NG	Complicated Buttons
+NG	X-Ray
+NG	Binary LED
 NG	Cruel Piano Keys
+NG	3D Maze
+NG	Alphabet
+NG	Coordinates
+NG	Friendship
+NG	Connection Check
+NG	Ice Cream
+NG	Third Base
+NG	Emoji Math
+NG	Hexamaze
+NG	Rock-Paper-Scissors-Lizard-Spock
+NG	Human Resources
+NG	Jukebox
+NG	Zoo
+NG	Tic Tac Toe
+NG	Adventure Game
+NG	Perspective Pegs
+NG	Morsematics
+NG	Memory
+NG	Symbol Cycle
+NG	Bulb
+NG	Resistors
+NG	Bitmaps
+NG	Probing
+NG	iPhone
+NG	Polyhedral Maze
+NG	Symbolic Password
+NG	Identity Parade
+NG	Web Design
+NG	Rhythms
+NG	Clock
+NG	Simon Screams
+OK	Maze
+NG	Cruel Game of Life
+NG	Souvenir
+NG	Forget Me Not
