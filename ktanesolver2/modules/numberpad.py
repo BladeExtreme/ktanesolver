@@ -26,7 +26,7 @@ class numberpad(edgework):
 		
 		Args:
 			edgework (edgework): The edgework of the bomb
-			color (list): The color list from number 1 to number 0, in reading order. Index 0 represents number 1, index 1 represents number 2 and so on
+			color (list): The color list from number 1 to number 0. Index 0 represents number 1, index 1 represents number 2 and so on
 			color (dict): The color of each number in dict. Keys must consist of: 1,2,3,4,5,6,7,8,9,0 in integer.
 		'''
         super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.strikes)
@@ -35,11 +35,11 @@ class numberpad(edgework):
     def __calculate(self):
         ans = []
 
-        pA = 0 if self.__colorlist.count('yellow')>=3 else 1 if (self.__colorlist[3] in ['white','blue','red'] and self.__colorlist[4] in ['white','blue','red'] and self.__colorlist[5] in ['white','blue','red']) else 2 if any([a in ['A','I','U','E','O'] for a in self._snletter]) else 3; ans.append(self.__table[0][pA]); pB = pA*4
-        pB += 0 if (self.__colorlist.count('blue')>=2 and self.__colorlist.count('green')>=3) else 1 if (self.__colorlist[4] not in ['blue', 'white']) else 2 if len([a for b in self.ports for a in b])<2 else 3; ans.append(self.__table[1][pB]); pC = (pA*8)+(pB*4)
-        pC += 0 if self.__colorlist.count('white')>2 and self.__colorlist.count('yellow')>2 else 1; ans.append(self.__table[2][pC]); ans = ans[::-1] if ans else ans; pD = (pA*16)+(pB*4)+(pC*2)
-        pD += 0 if self.__colorlist.count('yellow')<=2 else 1; ans.append(self.__table[3][pD]); ans = [(a+1)%10 if not pD else a for a in ans]
-    
+        pA = 0 if self.__colorlist.count('yellow')>=3 else 1 if (self.__colorlist[4] in ['white','blue','red'] and self.__colorlist[5] in ['white','blue','red'] and self.__colorlist[6] in ['white','blue','red']) else 2 if any([a in ['A','I','U','E','O'] for a in self._snletter]) else 3; ans.append(self.__table[0][pA]); rpB = pA*4
+        pB = 0 if (self.__colorlist.count('blue')>=2 and self.__colorlist.count('green')>=3) else 1 if (self.__colorlist[5] not in ['blue', 'white']) else 2 if len([a for b in self.ports for a in b])<2 else 3; ans.append(self.__table[1][rpB+pB]); ans = [(a-1)%10 if 'green' in self.__colorlist[7:] and pB==3 else a for a in ans]; rpC = (pA*8)+(pB*2)
+        pC = 0 if self.__colorlist.count('white')>2 and self.__colorlist.count('yellow')>2 else 1; ans.append(self.__table[2][rpC+pC]); ans = ans[::-1] if pC==1 else ans; rpD = (pA*16)+(pB*4)+(pC*2)
+        pD = 0 if self.__colorlist.count('yellow')<=2 else 1; ans.append(self.__table[3][rpD+pD]); ans = [(a+1)%10 if pD==0 else a for a in ans]
+
         if int(self._sndigit[-1])%2==0: temp=ans[0]; ans[0]=ans[2]; ans[2]=temp
         if self.batt%2==1: temp=ans[1]; ans[1]=ans[2]; ans[2]=temp
         if int(self._sndigit[-1])%2==1 and self.batt%2==0: temp=ans[0]; ans[0]=ans[3]; ans[3]=temp
