@@ -1,0 +1,100 @@
+--CENTURION--
+OK	Color Flash
+OK	Bitwise Operations
+OK	Crazy Talk
+OK	Two Bits
+OK	Letter Keys
+OK	Listening
+OK	Laundry
+OK	Round Keypad
+OK	Password
+OK	Orientation Cube
+--	English Test
+OK	Word Scramble
+OK	Monsplode, Fight!
+OK	Anagrams
+OK	Piano Keys
+>.	Password Translated
+OK	Safety Safe
+OK	Symbolic Password
+OK	Turn The Keys
+>.	Who's on First Translated
+OK	Combination Lock
+OK	Fast Math
+OK	Wire Placement
+OK	Rubik's Cube
+OK	Skewed Slots
+OK	Colored Squares
+OK	Follow the Leader
+OK	Chess
+OK	FizzBuzz
+OK	Perspective Pegs
+OK	Creation
+OK	Complicated Wires
+OK	Mystic Square
+OK	Double-Oh
+OK	Broken Buttons
+OK	Minesweeper
+OK	Tic Tac Toe
+NG	Number Pad
+NG	Cheap Checkout
+OK	Gamepad
+NG	Mouse in the Maze
+>.	Morse Code Translated
+NG	Boolean Venn Diagram
+OK	Word Search
+NG	Modules Against Humanity
+NG	Neutralization
+NG	Probing
+NG	Friendship
+NG	Yahtzee
+NG	Complicated Buttons
+NG	Adjacent Letters
+NG	Silly Slots
+OK	Plumbing
+NG	Sea Shells
+OK	Caesar Cipher
+NG	Rhythms
+NG	Murder
+NG	Adventure Game
+NG	Battleships
+NG	Only Connect
+OK	Point of Order
+NG	Third Base
+OK	Simon States
+NG	Foreign Exchange Rates
+NG	Screw
+NG	Color Math
+NG	Microcontroller
+NG	Square Button
+>.	Button Translated
+NG	Astrology
+NG	Light Cycle
+NG	Ice Cream
+NG	Hexamaze
+NG	Clock
+NG	Bitmaps
+NG	Coordinates
+NG	Simon Screams
+NG	3D Maze
+NG	Alphabet
+NG	Connection Check
+NG	Logic
+NG	Chord Qualities
+NG	Resistors
+NG	Rock-Paper-Scissors-Lizard-Spock
+NG	Switches
+NG	Zoo
+NG	Binary LED
+NG	Text Field
+OK	Semaphore
+OK	Shape Shift
+OK	Cryptography
+NG	Blind Alley
+OK	LED Encryption
+NG	Emoji Math
+NG	Morsematics
+NG	Web Design
+NG	Bulb
+NG	Souvenir
+NG	Forget Me Not
