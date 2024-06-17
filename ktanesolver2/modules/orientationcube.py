@@ -50,7 +50,7 @@ class orientationcube(edgework):
             ans = self.__calculate()
             if isinstance(ans[-1], list):
                 self.__nextpos = ans[-1]
-                return 're-enter new position'
+                return tuple([ans[0], 'NEW POS'])
             return tuple(ans)
         else:
             return tuple(self.__nextpos[self.__poston[self.__check(new_position)]])
