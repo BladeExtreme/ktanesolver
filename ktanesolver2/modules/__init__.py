@@ -60,3 +60,4 @@ from .fizzbuzz import fizzbuzz
 from .perspectivepegs import perspectivepegs
 from .creation import creation
 from .doubleoh import doubleoh
+from .tictactoe import tictactoe
