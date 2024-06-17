@@ -61,3 +61,4 @@ from .perspectivepegs import perspectivepegs
 from .creation import creation
 from .doubleoh import doubleoh
 from .tictactoe import tictactoe
+from .numberpad import numberpad
