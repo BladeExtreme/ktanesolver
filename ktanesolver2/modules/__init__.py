@@ -64,3 +64,4 @@ from .tictactoe import tictactoe
 from .numberpad import numberpad
 from .cheapcheckout import cheapcheckout
 from .booleanvenndiagram import booleanvenndiagram
+from .modulesagainsthumanity import modulesagainsthumanity
