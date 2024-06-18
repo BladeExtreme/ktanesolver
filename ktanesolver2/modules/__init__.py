@@ -67,3 +67,4 @@ from .booleanvenndiagram import booleanvenndiagram
 from .modulesagainsthumanity import modulesagainsthumanity
 from .neutralization import neutralization
 from .probing import probing
+from .friendship import friendship
