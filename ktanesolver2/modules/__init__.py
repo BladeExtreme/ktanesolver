@@ -68,3 +68,6 @@ from .modulesagainsthumanity import modulesagainsthumanity
 from .neutralization import neutralization
 from .probing import probing
 from .friendship import friendship
+from .complicatedbuttons import complicatedbuttons
+from .adjacentletters import adjacentletters
+from .sillyslots import sillyslots
