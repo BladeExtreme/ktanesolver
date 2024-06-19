@@ -71,3 +71,7 @@ from .friendship import friendship
 from .complicatedbuttons import complicatedbuttons
 from .adjacentletters import adjacentletters
 from .sillyslots import sillyslots
+from .seashells import seashells
+from .rhythms import rhythms
+from .murder import murder
+from .adventuregame import adventuregame

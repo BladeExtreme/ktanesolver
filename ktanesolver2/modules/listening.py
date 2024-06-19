@@ -45,9 +45,10 @@ class listening(edgework):
         'glass shattering':     '*$*$*'
     }
 
-    def __init__(self, edgework: edgework, audio: str):
+    def __init__(self, edgework: edgework, audio:str|None=None):
         super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
-        self.__audio = self.__check(audio.lower())
+        if audio is not None:
+            self.__audio = self.__check(audio.lower())
     
     def __check(self, a):
         if not isinstance(a, str): raise TypeError("Audio has an invalid type")

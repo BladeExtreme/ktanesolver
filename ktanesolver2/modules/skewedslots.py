@@ -24,7 +24,7 @@ class skewedslots(edgework):
     
     def __calculate(self):
         offset = len(self._litind)-len(self._unlitind)
-        edit = [5-offset if x == 2 else 0-offset if x == 7 else x-offset for x in self.__edit]
+        edit = [5+offset if x == 2 else 0+offset if x == 7 else x+offset for x in self.__edit]
         for a in range(len(edit)):
             if edit[a]%3==0: edit[a] += 4
             elif edit[a]>7: edit[a] *= 2

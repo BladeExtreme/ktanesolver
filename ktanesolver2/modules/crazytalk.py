@@ -11,7 +11,7 @@ class crazytalk(edgework):
 	"nothing": "12",	"novebmer oscar space, lima india": "07",	"novebmer oscar space, lima indigo": "29",	"ok word for word left arrow symbol": "60",	"one 3 2 4": "34",	"one 3 2 four": "38",
 	"one and then 3 to": "47",	"one in letters 3 2": "35",	"one three 2 with two": "43",	"one three to for": "39",	"one three two four": "37",	"one word then punctuation stop": "09",	"period": "79",
 	"period period": "82",	"period twice": "83",	"right all in words starting": "49",	"seven words five words three": "05",	"stop dot period": "50",	"stop stop": "75",	"stop twice": "76",
-	"stop": "74",	"that's what it's showing": "21",	"the following sentence the word": "27",	"the phrase the word left": "71",	"the phrase the word nothing": "26",	"the phrase the word stop": "91",	"the phrase: the punctuation fullstop": "93",
+	"stop.": "74",	"that's what it's showing": "21",	"the following sentence the word": "27",	"the phrase the word left": "71",	"the phrase the word nothing": "26",	"the phrase the word stop": "91",	"the phrase: the punctuation fullstop": "93",
 	"the punctuation fullstop": "92",	"the word blank": "01",	"the word left": "70",	"the word one and then": "48",	"the word stop twice": "94",	"there are three words no": "50",
 	"there's nothing": "18",	"this one is all arrow": "28",	"three words the punctuation fullstop": "99",	"three words the word stop": "73",	"wait forget everything i just": "16",	"we just blew up": "42"
     }

@@ -93,7 +93,7 @@ class tictactoe(edgework):
             elif len(coord)!=2: raise IndexError("Length of coord must be 2")
             elif not all([isinstance(a,int) for a in coord]): raise TypeError("Element of coord must be int")
             elif not all([a in range(0,3) for a in coord]): raise ValueError("Value of coord must be between 0-2")
-            self.__grid[coord[0]][coord[1]] = newpieceingrid
+            self.__grid[coord[0]][coord[1]] = newpieceingrid.upper()
             self.__numbers = [a for b in self.__grid for a in b if a.isnumeric()]
         if striked is not None:
             if not isinstance(striked, bool): raise TypeError("striked must be in bool")
