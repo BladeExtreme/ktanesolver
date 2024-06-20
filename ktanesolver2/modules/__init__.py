@@ -75,3 +75,10 @@ from .seashells import seashells
 from .rhythms import rhythms
 from .murder import murder
 from .adventuregame import adventuregame
+from .onlyconnect import onlyconnect
+from .thirdbase import thirdbase
+from .foreignexchangerates import foreignexchangerates
+from .screw import screw
+from .colormath import colormath
+from .microcontroller import microcontroller
+from .logic import logic

@@ -15,15 +15,15 @@ class booleanvenndiagram(edgework):
             edgework (edgework): The edgework of the bomb
             logic (function): The logic function that appears on the module. Parameter of this function must have parameters named: 'a', 'b', 'c'. Representing a, b, and c on the module.
         NOTE:
-            If you're confused how to translate the logical symbol to python here's a guide:
-            x ∧ y = x and y
-            x v y = x or y
-            x ⊻ y = x ^ y
-            x → y = not x or y
-            x ← y = x or not y
-            x | y = not (x and y)
-            x ↓ y = not (x or y)
-            x ↔ y = not (x ^ y)
+            If you're confused how to translate the logical symbol to python here's a guide:\n
+            x ∧ y = x and y\n
+            x v y = x or y\n
+            x ⊻ y = x ^ y\n
+            x → y = not x or y\n
+            x ← y = x or not y\n
+            x | y = not (x and y)\n
+            x ↓ y = not (x or y)\n
+            x ↔ y = not (x ^ y)\n
         '''
         super().__init__(edgework.batt ,edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__logic = self.__check(logic)
