@@ -82,3 +82,10 @@ from .screw import screw
 from .colormath import colormath
 from .microcontroller import microcontroller
 from .logic import logic
+from .squarebutton import squarebutton
+from .astrology import astrology
+from .lightcycle import lightcycle
+from .icecream import icecream
+from .clock import clock
+from .bitmaps import bitmaps
+from .alphabet import alphabet
