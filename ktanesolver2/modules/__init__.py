@@ -89,3 +89,8 @@ from .icecream import icecream
 from .clock import clock
 from .bitmaps import bitmaps
 from .alphabet import alphabet
+from .regularhexpressions import regularhexpressions
+from .charactershift import charactershift
+from .sevendeadlysins import sevendeadlysins
+from .playfaircipher import playfaircipher
+# from .x01 import x01

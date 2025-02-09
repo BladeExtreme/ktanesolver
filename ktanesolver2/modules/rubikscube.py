@@ -35,22 +35,17 @@ class rubikscube(edgework):
         ]
         invalid = col2num[self.__color['d']]-1; skips = [col2num[a] for a in [self.__color['u'], self.__color['l'], self.__color['f']]]
         validsn = [int(self.sn[a]) if self.sn[a].isnumeric() else int(ord(self.sn[a])-55) for a in range(len(self.sn)) if a != invalid]
-        ans = []
+        temp_ans = [movelist[(int((a-(a%3))/3)+skips[a%3])%12] for a in validsn]
         if self.__color['r'] in ['red', 'green', 'blue']:
-            for a in validsn: ans.append(movelist[(int((a-(a%3))/3)+skips[a%3])%12])
+            ans = [a for b in temp_ans for a in b]
         else:
-            ans1 = []
-            for a in validsn:
-                ans.append(movelist[(int((a-(a%3))/3)+skips[a%3])%12])[0]
-                ans1.append(movelist[(int((a-(a%3))/3)+skips[a%3])%12])[1]
-            ans.append(ans1)
-        ans = [a for b in ans for a in b]
-        if self.__color['r'] in ['red', 'yellow', 'green']:
+            ans = [a[0] for a in temp_ans]+[a[1] for a in temp_ans]
+        
+        if self.__color['r'] in ['red', 'yellow']:
             for a in range(5):
                 if "'" in ans[a]: ans[a].replace("'", "")
                 else: ans[a] += "'"
         if self.__color['r'] in ['green', 'white']: ans = ans[::-1]
-        
         return tuple(ans)
 
 

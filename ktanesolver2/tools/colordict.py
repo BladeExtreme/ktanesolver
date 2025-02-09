@@ -10,9 +10,10 @@ __colordict = {
     'm': 'magenta',
     'a': 'gray',
     'p': 'purple',
-    'i': 'pink'
+    'i': 'pink',
+    'n': 'brown'
 }
-__arr = ['pink', 'dark gray', 'jade', 'indigo', 'maroon', 'gold', 'silver']
+__arr = ['pink', 'dark gray', 'jade', 'indigo', 'maroon', 'gold', 'silver', 'moss', 'forest']
 
 
 def _colorcheck(a):

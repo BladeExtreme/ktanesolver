@@ -49,7 +49,7 @@ class adjacentletters(edgework):
 
     def solve(self):
         '''
-        Solve the Adjacent Letters modulle
+        Solve the Adjacent Letters module
 
         Returns:
             tuple (tuple (int, int, str)): The coordinates of button that need to be pressed down before submitting. In sub-tuples, index 0 represents the row index 1 represents the column and index 2 is the letter of that button in that coordination
