@@ -7,7 +7,7 @@ KTaNE solver is a library full of solver for the game KTaNE. It supports vanilla
  1. Start by importing ktanesolver2 (will change the name to ktanesolver)
  2. Assign the edgework class to a variable. Follow the documentation for the edgework class
  3. Import the modules inside the ktanesolver library using ktanesolver.modules
- 4. You will be able to access all the available solver for modules. Please note that *some* modules doesn't have solver because it's either too easy, or you are able to solve it by your own without any help
+ 4. You will be able to access all the available solver for modules. Please note that *some* modules doesn't have solver because it's either too hard to implement
 <br><br>
 ### Major Update - 29/05/2024
 ---
