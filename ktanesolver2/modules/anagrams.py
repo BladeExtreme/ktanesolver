@@ -15,7 +15,7 @@ class anagrams(edgework):
     def __check(self, l):
         if not isinstance(l, str): raise TypeError("Word has an invalid type")
         elif len(l) != 6: raise IndexError("Length of word must be 6")
-        return l
+        return [a.lower() for a in l]
     
     def __init__(self, edgework: edgework, word: str):
         '''

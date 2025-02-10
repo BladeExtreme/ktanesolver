@@ -101,7 +101,7 @@ class playfaircipher(edgework):
                 c2 = playground5[r2].index(self.__encrypted[a+1])
                 ans.append(playground5[r1][c2])
                 ans.append(playground5[r2][c1])
-        
+
         #finding the answer
         return self.__find_answer(ans)
     
@@ -116,7 +116,10 @@ class playfaircipher(edgework):
             "ZTRYKE": ["CABD", "BCAD", "CDBA", "CBDA"],
             "ZTRYK": ["DCAB", "CADB", "DBAC", "BDAC"]
         }
-        return table.get("".join([a for a in ans if a !="X"]))[self.__color]
+        try:
+            return table.get("".join([a for a in ans if a !="X"]))[self.__color]
+        except:
+            raise ValueError("Unable to find the answer")
 
     def solve(self):
         '''

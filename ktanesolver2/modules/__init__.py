@@ -93,4 +93,4 @@ from .regularhexpressions import regularhexpressions
 from .charactershift import charactershift
 from .sevendeadlysins import sevendeadlysins
 from .playfaircipher import playfaircipher
-# from .x01 import x01
+from .x01 import x01
