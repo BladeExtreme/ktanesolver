@@ -94,3 +94,6 @@ from .charactershift import charactershift
 from .sevendeadlysins import sevendeadlysins
 from .playfaircipher import playfaircipher
 from .x01 import x01
+from .splittingtheloot import splittingtheloot
+from .binarypuzzle import binarypuzzle
+from .caesarsmaths import caesarsmaths

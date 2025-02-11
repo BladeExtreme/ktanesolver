@@ -21,14 +21,14 @@ class x01(edgework):
     
     def __checkrules(self, points):
         rules = set()
-        for a in range(0,len(self.__numbers)-2):
-            if all([b<=6 for b in self.__numbers[a:a+3]]): rules.add(0)
-            if all([b>=15 for b in self.__numbers[a:a+3]]): rules.add(1)
-            if all([b%2==0 for b in self.__numbers[a:a+3]]): rules.add(3)
-        for a in range(0,len(self.__numbers)-3):
-            if all([b%2==1 for b in self.__numbers[a:a+4]]): rules.add(2)
+        for a in range(0,len(self.__numbers)):
+            if all([b<=6 for b in [self.__numbers[a], self.__numbers[(a+1)%len(self.__numbers)], self.__numbers[(a+2)%len(self.__numbers)]]]): rules.add(0)
+            if all([b>=15 for b in [self.__numbers[a], self.__numbers[(a+1)%len(self.__numbers)], self.__numbers[(a+2)%len(self.__numbers)]]]): rules.add(1)
+            if all([b%2==0 for b in [self.__numbers[a], self.__numbers[(a+1)%len(self.__numbers)], self.__numbers[(a+2)%len(self.__numbers)]]]): rules.add(3)
+        for a in range(0,len(self.__numbers)):
+            if all([b%2==1 for b in [self.__numbers[a], self.__numbers[(a+1)%len(self.__numbers)], self.__numbers[(a+2)%len(self.__numbers)], self.__numbers[(a+3)%len(self.__numbers)]]]): rules.add(2)
         if any([a in self._snletter for a in "MVG"]): rules.add(4)
-        if len([a for a in self.__numbers if a>10]): rules.add(5)
+        if len([a for a in self.__numbers if a>10])==5: rules.add(5)
         if points<=45: rules.add(6)
         else: rules.add(7)
 
@@ -56,7 +56,7 @@ class x01(edgework):
             elif colnum in range(3,6): colnum=1
             else: colnum=2
 
-            rownum = ((self.batt-self.hold)*2)+len(self._sndigit)
+            rownum = ((self.batt-self.hold))+len(self._sndigit)
             match rownum:
                 case rownum if rownum in range(0,3): rownum=[74,53,79]
                 case rownum if rownum in range(3,5): rownum=[62,41,70]
@@ -124,7 +124,7 @@ class x01(edgework):
                             queue.append([new_score, new_throws, darts_used+1])
                 else:
                     new_throws = throws+[[seg,-1]]
-                    new_score = current_score+(seg*mul)
+                    new_score = current_score+(seg*-1)
                     if self.__checkrestriction(new_throws, darts, restrictions):
                         queue.append([new_score, new_throws, darts_used+1])
         return throws
@@ -147,7 +147,7 @@ class x01(edgework):
                     mul = "S" if result[a][1]==1 else "D" if result[a][1]==2 else "T" if result[a][1]==3 else "Bullseye "
                     if mul!="Bullseye ":
                         ans.append(f"{mul}{result[a][0]}")
-                    else: ans.append(f"{mul}{'Outer' if result[a][0]==-25 else 'Inner'}")
+                    else: ans.append(f"{'SB' if result[a][0]==-25 else 'DB'}")
                 return ans
             else:
                 for a in result:
