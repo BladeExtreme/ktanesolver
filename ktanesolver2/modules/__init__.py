@@ -97,3 +97,8 @@ from .x01 import x01
 from .splittingtheloot import splittingtheloot
 from .binarypuzzle import binarypuzzle
 from .caesarsmaths import caesarsmaths
+from .mahjong import mahjong
+from .mazematics import mazematics
+# from .countdown import countdown
+from .blindmaze import blindmaze
+from .algebra import algebra

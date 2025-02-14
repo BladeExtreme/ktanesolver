@@ -36,50 +36,50 @@ OK	Double-Oh
 OK	Broken Buttons
 OK	Minesweeper
 OK	Tic Tac Toe
-NG	Number Pad
-NG	Cheap Checkout
+OK	Number Pad
+OK	Cheap Checkout
 OK	Gamepad
 NG	Mouse in the Maze
 >.	Morse Code Translated
-NG	Boolean Venn Diagram
+OK	Boolean Venn Diagram
 OK	Word Search
-NG	Modules Against Humanity
-NG	Neutralization
-NG	Probing
-NG	Friendship
+OK	Modules Against Humanity
+OK	Neutralization
+OK	Probing
+OK	Friendship
 NG	Yahtzee
-NG	Complicated Buttons
-NG	Adjacent Letters
-NG	Silly Slots
+OK	Complicated Buttons
+OK	Adjacent Letters
+OK	Silly Slots
 OK	Plumbing
-NG	Sea Shells
+OK	Sea Shells
 OK	Caesar Cipher
-NG	Rhythms
-NG	Murder
-NG	Adventure Game
+OK	Rhythms
+OK	Murder
+OK	Adventure Game
 NG	Battleships
-NG	Only Connect
+OK	Only Connect
 OK	Point of Order
-NG	Third Base
+OK	Third Base
 OK	Simon States
-NG	Foreign Exchange Rates
-NG	Screw
-NG	Color Math
-NG	Microcontroller
-NG	Square Button
+OK	Foreign Exchange Rates
+OK	Screw
+OK	Color Math
+OK	Microcontroller
+OK	Square Button
 >.	Button Translated
-NG	Astrology
-NG	Light Cycle
-NG	Ice Cream
+OK	Astrology
+OK	Light Cycle
+OK	Ice Cream
 NG	Hexamaze
-NG	Clock
-NG	Bitmaps
+OK	Clock
+OK	Bitmaps
 NG	Coordinates
 NG	Simon Screams
 NG	3D Maze
-NG	Alphabet
+OK	Alphabet
 NG	Connection Check
-NG	Logic
+OK	Logic
 NG	Chord Qualities
 NG	Resistors
 NG	Rock-Paper-Scissors-Lizard-Spock

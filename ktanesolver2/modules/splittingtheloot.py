@@ -101,4 +101,3 @@ class splittingtheloot(edgework):
         team1 = [str(a).zfill(2) for a in result['l'][0]]; team2 = [str(a).zfill(2) for a in result['l'][1]]
         team1 = team1+[reverse_diamonds.get(a) for a in result['d'][0]]; team2 = team2+[reverse_diamonds.get(a) for a in result['d'][1]]
         return (team1, team2)
-        return result

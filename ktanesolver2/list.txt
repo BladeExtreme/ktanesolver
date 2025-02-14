@@ -53,18 +53,18 @@ OK	Caesar Cipher
 >.	Extended Password
 NG	Blind Maze
 NG	Cruel Mastermind
-NG	Monsplode, Fight!
-NG	Boolean Venn Diagram
-NG	Only Connect
-NG	Fast Math
-NG	Algebra
+OK	Monsplode, Fight!
+OK	Boolean Venn Diagram
+OK	Only Connect
+OK	Fast Math
+OK	Algebra
 NG	Braille
 >.	Button Translated
 NG	Sink
-NG	Modules Against Humanity
-NG	Light Cycle
-NG	Screw
-NG	FizzBuzz
+OK	Modules Against Humanity
+OK	Light Cycle
+OK	Screw
+OK	FizzBuzz
 NG	Poetry
 OK	Simon Says
 NG	The Swan
