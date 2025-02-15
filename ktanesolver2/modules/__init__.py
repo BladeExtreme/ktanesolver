@@ -99,6 +99,10 @@ from .binarypuzzle import binarypuzzle
 from .caesarsmaths import caesarsmaths
 from .mahjong import mahjong
 from .mazematics import mazematics
-# from .countdown import countdown
+from .countdown import countdown
 from .blindmaze import blindmaze
 from .algebra import algebra
+from .rockpaperscissorslizardspock import rpslsp
+from .switches import switches
+from .simonscreams import simonscreams
+from .connectioncheck import connectioncheck

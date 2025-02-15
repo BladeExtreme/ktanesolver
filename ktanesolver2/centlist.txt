@@ -75,15 +75,15 @@ NG	Hexamaze
 OK	Clock
 OK	Bitmaps
 NG	Coordinates
-NG	Simon Screams
+OK	Simon Screams
 NG	3D Maze
 OK	Alphabet
-NG	Connection Check
+OK	Connection Check
 OK	Logic
 NG	Chord Qualities
 NG	Resistors
-NG	Rock-Paper-Scissors-Lizard-Spock
-NG	Switches
+OK	Rock-Paper-Scissors-Lizard-Spock
+OK	Switches
 NG	Zoo
 NG	Binary LED
 NG	Text Field
