@@ -68,3 +68,10 @@ class astrology(edgework):
             tuple (str, int|str): Press either 'GOOD', 'BAD' or 'NO' omen according to index 0 of tuple when the timer has the digit mentioned in index 1 in any timer
         '''
         return self.__calculate()
+    
+    def showNames(self, name:str):
+        if name.lower() == 'element': return tuple(self.__elemword)
+        elif name.lower() == 'planet': return tuple(self.__planword)
+        elif name.lower() == 'zodiac': return tuple(self.__zodiword)
+        else:
+            raise ValueError("This name cannot be found in list. Use showNames('element'), showNames('planet') or showNames('zodiac')")

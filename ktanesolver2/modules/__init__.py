@@ -14,7 +14,7 @@ from .crazytalk import crazytalk
 from .laundry import laundry
 from .anagrams import anagrams
 from .roundkeypad import roundkeypad
-from .colorflash import colorflash
+from .colourflash import colourflash
 from .poker import poker
 from .skewedslots import skewedslots
 from .shapeshift import shapeshift
@@ -106,3 +106,8 @@ from .rockpaperscissorslizardspock import rpslsp
 from .switches import switches
 from .simonscreams import simonscreams
 from .connectioncheck import connectioncheck
+from .chordqualities import chordqualities
+from .zoo import zoo
+from .resistors import resistors
+from .textfield import textfield
+from .binaryled import binaryled

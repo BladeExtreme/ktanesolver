@@ -8,12 +8,12 @@ from .morsecode import morsecode
 from .wires import wires
 from .twobits import twobits
 from .button import button
-from .colorflash import colorflash
+from .colourflash import colourflash
 from .roundkeypad import roundkeypad
 
 class turnthekeys:
     __listL = [password, whosonfirst, crazytalk, keypad, listening, orientationcube]
-    __listR = [morsecode, wires, twobits, button, colorflash, roundkeypad]
+    __listR = [morsecode, wires, twobits, button, colourflash, roundkeypad]
     
     def __init__(self):
         '''
@@ -38,7 +38,7 @@ class turnthekeys:
         elif isinstance(solved_instance, wires): self.__listR.pop(self.__listR.index(wires))
         elif isinstance(solved_instance, twobits): self.__listR.pop(self.__listR.index(twobits))
         elif isinstance(solved_instance, button): self.__listR.pop(self.__listR.index(button))
-        elif isinstance(solved_instance, colorflash): self.__listR.pop(self.__listR.index(colorflash))
+        elif isinstance(solved_instance, colourflash): self.__listR.pop(self.__listR.index(colourflash))
         elif isinstance(solved_instance, roundkeypad): self.__listR.pop(self.__listR.index(roundkeypad))
 
     def showModules(self):

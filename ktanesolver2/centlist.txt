@@ -80,13 +80,13 @@ NG	3D Maze
 OK	Alphabet
 OK	Connection Check
 OK	Logic
-NG	Chord Qualities
-NG	Resistors
+OK	Chord Qualities
+OK	Resistors
 OK	Rock-Paper-Scissors-Lizard-Spock
 OK	Switches
-NG	Zoo
-NG	Binary LED
-NG	Text Field
+OK	Zoo
+OK	Binary LED
+OK	Text Field
 OK	Semaphore
 OK	Shape Shift
 OK	Cryptography

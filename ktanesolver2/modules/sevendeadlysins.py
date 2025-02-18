@@ -59,8 +59,10 @@ class sevendeadlysins(edgework):
         super().__init__(edgework.batt ,edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         if sins is not None:
             self.__sins = self.__check(sins)
-        else:
+        elif colors is not None:
             self.__sins = self.__checkC(colors)
+        elif sins is None and colors is None:
+            raise TypeError("AdjacentLetters.__init__() missing 1 required positional argument: 'sins' or 'colors'")
     
     def __bfs(self, start):
         queue = [[start]]

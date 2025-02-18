@@ -11,7 +11,8 @@ __colordict = {
     'a': 'gray',
     'p': 'purple',
     'i': 'pink',
-    'n': 'brown'
+    'n': 'brown',
+    'v': 'violet'
 }
 __arr = ['pink', 'dark gray', 'jade', 'indigo', 'maroon', 'gold', 'silver', 'moss', 'forest']
 

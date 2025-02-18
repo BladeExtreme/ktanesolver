@@ -1,3 +1,4 @@
+import copy
 from ..edgework import edgework
 
 class mysticsquare(edgework):
@@ -37,7 +38,7 @@ class mysticsquare(edgework):
     def __calculate(self):
         using = [self.__table[a][self.__grid[1][1]-1] if self.__state==1 else self.__table[self.__grid[1][1]-1][a] for a in range(8)]
         zero = [a for a in range(len(self.__grid)) if 0 in self.__grid[a]][0]
-        vis = []; start = [zero, self.__grid[zero][self.__grid[zero].index(0)]]
+        vis = []; start = [zero, self.__grid[zero].index(0)]
         for a in using:
             if self.__grid[start[0]][start[1]] not in vis: vis.append(self.__grid[start[0]][start[1]])
             neighbors = [[start[0]+1,start[1]],[start[0],start[1]+1],[start[0]-1,start[1]],[start[0],start[1]-1]]
@@ -50,13 +51,72 @@ class mysticsquare(edgework):
         temp = [a for b in self.__grid for a in b].index(vis[-1])
         return vis[-1], temp, " ".join(['top' if int((temp-temp%3)/3)==0 else 'middle' if int((temp-temp%3)/3)==1 else 'bottom', 'left' if temp%3==0 else 'middle' if temp%3==1 else 'right'])
 
-    def solve(self):
+    def __calculatePath(self, grid, target=None):
+        if target is None:
+            unicorn_table = [
+                [[[1,0,2],[0,0,0],[4,0,3]], [[1,0,2],[0,0,0],[3,0,4]], [[1,0,3],[0,0,0],[7,0,5]], [[1,0,3],[0,0,0],[5,0,7]]],
+                [[[0,1,0],[4,0,2],[0,3,0]], [[0,1,0],[3,0,2],[0,4,0]], [[0,2,0],[8,0,4],[0,6,0]], [[0,2,0],[6,0,4],[0,8,0]]],
+                [[[1,0,0],[0,2,0],[0,0,3]], [[0,0,3],[0,2,0],[1,0,0]], [[3,0,0],[0,2,0],[0,0,1]], [[0,0,1],[0,2,0],[3,0,0]]],
+                [[[1,2,3],[0,4,0],[0,0,0]], [[1,0,0],[2,4,0],[3,0,0]], [[0,0,0],[0,4,0],[1,2,3]], [[0,0,1],[0,4,2],[0,0,3]]]
+            ]
+            rotated_grid = [list(a)[::-1] for a in list(zip(*grid))]
+            row = [sum([b for b in self.__grid[a]]) for a in range(len(self.__grid))]
+            col = [sum([b for b in rotated_grid[a]]) for a in range(len(rotated_grid))]
+
+            row_n = 0; col_n = 0
+            if row.count(max(row))>1: row_n=3
+            else: row_n = row.index(max(row))
+            if col.count(max(col))>1: col_n=3
+            else: col_n = col.index(max(col))
+            return self.__bfs(grid, unicorn_table[row_n][col_n])
+        else:
+            return self.__bfs(grid, [[1,2,3],[4,5,6],[7,8,0]])
+
+    def __bfs(self, grid, target):
+        queue = [[grid, []]]
+        visited = set()
+        flat_target = [x for y in target for x in y]
+        idx = [a for a in range(len(flat_target)) if flat_target[a]!=0]
+
+        while queue:
+            curr_grid, path = queue.pop(0)
+            flat_grid = [x for y in curr_grid for x in y]
+            if all([flat_target[a]==flat_grid[a] for a in idx]): return path
+            if tuple([tuple(a) for a in curr_grid]) in visited: continue
+            visited.add(tuple([tuple(a) for a in curr_grid]))
+
+            x,y = 0,0
+            for a in range(len(curr_grid)):
+                if 0 in curr_grid[a]:
+                    x = curr_grid[a].index(0); y = a
+                    break
+            
+            neighbors = []
+            for a in [[1,0],[0,1],[-1,0],[0,-1]]:
+                if y+a[0]<3 and y+a[0]>=0 and x+a[1]<3 and x+a[1]>=0:
+                    neighbors.append([y+a[0],x+a[1]])
+            for a in neighbors:
+                new_grid = copy.deepcopy(curr_grid)
+                temp = new_grid[a[0]][a[1]]
+                new_grid[a[0]][a[1]] = new_grid[y][x]
+                new_grid[y][x] = temp
+
+                queue.append([new_grid, path+[f"{curr_grid[a[0]][a[1]]}"]])
+
+    def solve(self, solve_grid:list[list[int]]|None=None):
         '''
-        Find the skull in the Mystic Square module
+        Find the skull or Solve the Mystic Square module
+
+        Args:
+            solve_grid (list [list [int]]): The current grid if the mystic square wants to be solved. By default, this parameter is None. NOTE: The knight must be found first, to avoid any illegal moves or impossible solutions
 
         Returns:
-            int: The square number where the skull is below it
-            int: The index of the square in reading order. 0 is top left and 8 bottom right
-            str: The position name of where the skull is located
+            tuple (int, int, str): The position where the skull is. Index 0 represents the square number where the skull is below it. Index 1 represents the index of the square in reading order. Index 2 represents the position name of where the skull is located
+            list [int]: If solve_grid is not None, it will return the correct path to solve the module
         '''
-        return self.__calculate()
+        if solve_grid is None:
+            return tuple(self.__calculate())
+        else:
+            result1 = self.__calculatePath(self.__check(solve_grid))
+            # result2 = self.__calculatePath(self.__check(solve_grid), 'standard')
+            return result1
