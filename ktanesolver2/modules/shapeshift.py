@@ -19,7 +19,7 @@ class shapeshift(edgework):
             10: 15 if any([a in ['a','i','u','e','o'] for a in self._snletter]) else 2,
             11: 12 if self.batt-self.hold != 0 else 3,
             12: 2 if 'FRQ' in self._unlitind else 5,
-            13: 2 if 'PS/2' in self._uniqueports else 5,
+            13: 2 if 'PS/2' in self._uniqueports else 6,
             14: 1 if 'STEREO RCA' in self._uniqueports else 8,
             15: 12 if self.batt >= 3 else 3
         }

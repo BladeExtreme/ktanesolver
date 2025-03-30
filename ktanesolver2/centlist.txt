@@ -90,9 +90,9 @@ OK	Text Field
 OK	Semaphore
 OK	Shape Shift
 OK	Cryptography
-NG	Blind Alley
+OK	Blind Alley
 OK	LED Encryption
-NG	Emoji Math
+OK	Emoji Math
 NG	Morsematics
 NG	Web Design
 NG	Bulb

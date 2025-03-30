@@ -47,3 +47,15 @@ def _translate(m):
             t.append(__morsedict.get(m[a]))
         if None in t: raise IndexError(f"Morse code: '{m[t.index(None)]}' is invalid")
     return t
+
+def _reverseTranslate(m):
+    __reversemorsedict = {b:a for a,b in __morsedict.items()}
+    if isinstance(m, str):
+        t = __reversemorsedict.get(m.lower())
+        if t == None: raise IndexError(f"Character: '{m}' is invalid")
+    elif isinstance(m, list):
+        t = []
+        for a in range(len(m)):
+            t.append(__reversemorsedict.get(m[a].lower()))
+        if None in t: raise IndexError(f"Morse Code: '{m[t.index(None)]}' is invalid")
+    return t

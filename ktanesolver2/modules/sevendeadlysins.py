@@ -55,7 +55,7 @@ class sevendeadlysins(edgework):
             sins (list (str)): The list represents the order of sins on the bomb, where the position of each sin in the list is significant. Each consecutive pair of sins in the list are directly related to each other and represent adjacent sins on the bomb
             colors (list (str)): The color of each sin on the module. CAUTION: colors must be in sync with sins. NOTE: If sins is not provided, colors must be provided and behaves like sins
         '''
-        if sins and colors==None: raise TypeError("AdjacentLetters.__init__() missing 1 required positional argument: 'colors' or 'sins'")
+        if sins is None and colors is None: raise TypeError("AdjacentLetters.__init__() missing 1 required positional argument: 'colors' or 'sins'")
         super().__init__(edgework.batt ,edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         if sins is not None:
             self.__sins = self.__check(sins)

@@ -15,7 +15,7 @@ class mahjong(edgework):
         elif s.lower() not in ["bamboo", "bamboo 1", "1", "one", "green" "plum", "orchid", "chrysanthemum", "spring", "summer", "fall", "autumn", "winter", "winter", "north", "east", "south", "west", "green dragon"]: raise ValueError("This shape cannot be found in list. Use showNames()")
         return s.lower(), False
 
-    def __init__(self, edgework:edgework, shape:str):
+    def __init__(self, edgework:edgework, shape:str|None=None):
         '''
         Initialize a new mahjong instance
 
@@ -24,7 +24,9 @@ class mahjong(edgework):
             shape (str): The shape of the tile that appears on the bottom left of the module. The accepted values can be see using '.showNames()'
         '''
         super().__init__(edgework.batt ,edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
-        self.__shape, self.__flag = self.__check(shape)
+        self.__shape = None
+        if shape is not None:
+            self.__shape, self.__flag = self.__check(shape)
 
     
     def __calculate(self):
@@ -59,6 +61,8 @@ class mahjong(edgework):
         Returns:
             dict (str|str): The dict of tiles with similar likeness. Keys and Values rotate each other, meaning a key will be a value once and vice versa
         '''
+        if self.__shape is None:
+            raise ValueError("shape has not been initialized yet")
         if not self.__flag: result = self.__calculate()
         return result
 

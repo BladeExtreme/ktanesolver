@@ -67,7 +67,16 @@ class maze(edgework):
         ]
     ]
     
-    def __init__(self, edgework, maze: tuple, player: tuple, target: tuple):
+    def __init__(self, edgework, maze: tuple[str], player: str, target: str):
+        '''
+        Initialize a new maze instance
+
+        Args:
+            edgework (edgework): The edgework of the bomb
+            maze (tuple [str]): The coordinate of the maze indicator. The tuple must have 2 index. Column is the letters (A-F) and the rows are the numbers (1-6)
+            player (str): The coordinate of the player. Column is the letters (A-F) and the rows are the numbers (1-6)
+            target (str): The coordinate of the target. Column is the letters (A-F) and the rows are the numbers (1-6)
+        '''
         super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
         self.__maze, self.__player, self.__target = self.__check(tuple([a.upper() for a in maze]), player.upper(), target.upper())
     
@@ -76,8 +85,8 @@ class maze(edgework):
         elif not isinstance(p, str): raise TypeError("Player's coordinate is not in the correct type")
         elif not isinstance(t, str): raise TypeError("Target's coordinate is not in the correct type")
         elif len(m) != 2 and all([True if len(a)==2 else False for a in m]): raise IndexError("Maze's coordinate is incomplete")
-        elif len(p) != 1 and len(p[0]) == 2: raise IndexError("Player's coordinate is incomplete")
-        elif len(t) != 1 and len(t[0]) == 2: raise IndexError("Target's coordinate is incomplete")
+        elif len(p) != 2 and p[0] not in "ABCDEF" and p[1] not in "123456": raise IndexError("Player's coordinate is incomplete")
+        elif len(t) != 2 and t[0] not in "ABCDEF" and p[1] not in "123456": raise IndexError("Target's coordinate is incomplete")
         elif not p[0].isalpha() or not t[0].isalpha(): raise ValueError("Coordinaation must be column first (letters) then rows (numbers)")
         else: return m,p,t
     
@@ -101,7 +110,6 @@ class maze(edgework):
             if all([b in self.__maze for b in coords[a]]): c=a; break
         xp, yp = ord(self.__player[0]) - ord('A'), int(self.__player[1])-1
         xt, yt = ord(self.__target[0]) - ord('A'), int(self.__target[1])-1
-        
         return c, [xp, yp], [xt, yt]
 
     def __calculate(self, maze, p, t):

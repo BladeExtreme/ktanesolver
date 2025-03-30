@@ -20,7 +20,7 @@ class button(edgework):
         return c, l
 
     def __calculate(self):
-        if self.__label == 'detonate': self.__label = self.__label+'1' if self.batt <= 1 else '2'
+        if self.__label == 'detonate': self.__label = self.__label+'1' if self.batt <= 1 else self.__label+'2'
         if self.__color == 'white': idx = 0 if 'CAR' not in self.ind else 1
         else: idx = -1
         x = 't' if self.batt >= 3 and 'FRK' in self.litind else 'h'

@@ -15,24 +15,22 @@ class twobits(edgework):
       ]
     
     def __check(self, q):
-        if not isinstance(q, str): raise TypeError("Query has an invalid type")
-        elif len(q) !=2: raise IndexError("Query must be length of 2")
+        if not isinstance(q, (str, int)): raise TypeError("Query must be in str or int")
+        if isinstance(q, int): q = str(q).zfill(2)
+        
+        if len(q) !=2: raise IndexError("Query must be length of 2")
         elif q[0].isalpha() or q[1].isalpha(): raise ValueError("Query cannot be a letter, must be all numbers")
+        elif int(q[0]) not in range(0,10) or int(q[1]) not in range(0,10): raise ValueError("Query must be in range of 00-99")
         return q
 
-    def __init__(self, edgework: edgework, query: str | None = None):
+    def __init__(self, edgework: edgework):
         '''
         Intialize a new twobits instance
 
         Args:
             edgework (edgework): The edgework of the bomb
-            query (str)|(None): The query code that appears on the module. If this is the first query, leave it empty
         '''
         super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
-        try:
-            self.__query = self.__check(query)
-        except:
-            self.__query = None
     
     def __calculate(self):
         n = ord(self._snletter[0]) - ord('A') + 1 if len(self._snletter) > 0 else 0
@@ -41,29 +39,20 @@ class twobits(edgework):
         n = str(n%100) if n>99 else '0'+str(n) if n<10 else str(n)
         return n
 
-    def interactive(self, query: str):
-        '''
-        A quicker way to query the code without initializing a new instance. Assuming you've done the first query
-        This can only be used when the edgework has been intialized to this instance
-
-        Args:
-            query (str)|(None): The query code that appears on the module.
-        Returns:
-            str: The query/submit code
-        '''
-        self.__query = self.__check(query)
-        return self.solve()
-
-    def solve(self):
+    def solve(self, query:str|int|None=None):
         '''
         Solve the Two Bits module
 
+        Args:
+            query (str|int|None): The query code that appears on the module. Leave this parameter None if this is the first query
+
         Returns:
             str: The query/submit code
         '''
-        if self.__query != None:
-            r, c = int(self.__query[0]), int(self.__query[1])
+        if query is not None:
+            self.__query = self.__check(query)
+            r,c = int(self.__query[0]), int(self.__query[1])
         else:
             a = self.__calculate()
-            r, c = int(a[0]), int(a[1])
+            r,c = int(a[0]), int(a[1])
         return self.__querybank[r][c]

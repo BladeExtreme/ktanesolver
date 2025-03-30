@@ -1,19 +1,16 @@
+import re
 from ..edgework import edgework
 
 class crazytalk(edgework):
     __bank = {
-	"..": "85", ".period": "81", ".stop": "78",	"<-": "63",	"<- <- -> <- -> ->": "54",	"<- <- right left -> ->": "61",	"<- left -> left -> right": "56",	"1 3 2 4": "32",
-	"1 3 2 for": "10",	"1 3 to 4": "30",	"1 3 too 4": "20",	"1 3 too with 2": "42",	"1 3 too with two": "41",	"1 three two four": "36",	"after i say beep find this": "72",
-	"all words one three to": "40",	"an actual left arrow": "62",	"an actual left arrow literal": "53",	"blank": "13",	"disregard what i just said four": "31",	"disregard what i just said two": "08",
-	"dot dot": "86",	"empty space": "16",	"five words three words the": "19",	"for the love of the": "87",	"for the love of all": "90",	"fullstop fullstop": "84",
-	"hold on crazy talk while": "21",	"hold on it's blank": "19",	"it literally says the word": "45",	"it's showing nothing": "23",	"left": "69","left arrow": "68",	"left arrow left word right": "58",	"left arrow symbol": "64",	"left arrow symbol twice then": "59",	"left left right <- right": "57",	"left left right left right": "67",
-	"literally blank": "15",	"literally nothing": "14",	"no comma literally nothing": "24",	"no really stop": "51",	"no really": "52",	"no, literally nothing": "25",
-	"nothing": "12",	"novebmer oscar space, lima india": "07",	"novebmer oscar space, lima indigo": "29",	"ok word for word left arrow symbol": "60",	"one 3 2 4": "34",	"one 3 2 four": "38",
-	"one and then 3 to": "47",	"one in letters 3 2": "35",	"one three 2 with two": "43",	"one three to for": "39",	"one three two four": "37",	"one word then punctuation stop": "09",	"period": "79",
-	"period period": "82",	"period twice": "83",	"right all in words starting": "49",	"seven words five words three": "05",	"stop dot period": "50",	"stop stop": "75",	"stop twice": "76",
-	"stop.": "74",	"that's what it's showing": "21",	"the following sentence the word": "27",	"the phrase the word left": "71",	"the phrase the word nothing": "26",	"the phrase the word stop": "91",	"the phrase: the punctuation fullstop": "93",
-	"the punctuation fullstop": "92",	"the word blank": "01",	"the word left": "70",	"the word one and then": "48",	"the word stop twice": "94",	"there are three words no": "50",
-	"there's nothing": "18",	"this one is all arrow": "28",	"three words the punctuation fullstop": "99",	"three words the word stop": "73",	"wait forget everything i just": "16",	"we just blew up": "42"
+	"..": "85", ".PERIOD": "81", ".STOP": "78", "<-": "63", "<- <- -> <- -> ->": "54", "<- <- RIGHT LEFT -> ->": "61", "<- LEFT -> LEFT -> RIGHT": "56", "1 3 2 4": "32", "1 3 2 FOR": "10",
+    "1 3 TO 4": "30", "1 3 TOO 4": "20", "1 3 TOO WITH 2 OHS FOUR": "42", "1 3 TOO WITH TWO OS 4": "41", "1 THREE TWO FOUR": "36", "AFTER I SAY BEEP FIND THIS PHRASE WORD FOR WORD BEEP AN ACTUAL LEFT ARROW": "72", "ALL WORDS ONE THREE TO FOR FOR AS IN THIS IS FOR YOU": "40", "AN ACTUAL LEFT ARROW": "62", "AN ACTUAL LEFT ARROW LITERAL PHRASE": "53", "BLANK": "13",
+    "DISREGARD WHAT I JUST SAID. FOUR WORDS, NO PUNCTUATION. ONE THREE 2 4.": "31", "DISREGARD WHAT I JUST SAID. TWO WORDS THEN TWO DIGITS. ONE THREE 2 4.": "08", "DOT DOT": "86", "EMPTY SPACE": "16", "FIVE WORDS THREE WORDS THE PUNCTUATION FULLSTOP": "19", "FOR THE LOVE OF - THE DISPLAY JUST CHANGED, I DIDN'T KNOW THIS MOD COULD DO THAT. DOES IT MENTION THAT IN THE MANUAL?": "87", "FOR THE LOVE OF ALL THAT IS GOOD AND HOLY PLEASE FULLSTOP FULLSTOP.": "90", "FULLSTOP FULLSTOP": "84", "HOLD ON CRAZY TALK WHILE I DO THIS NEEDY": "21", "HOLD ON IT'S BLANK": "19",
+    "IT LITERALLY SAYS THE WORD ONE AND THEN THE NUMBERS 2 3 4": "45", "IT'S SHOWING NOTHING": "23", "LEFT": "69", "LEFT ARROW": "68", "LEFT ARROW LEFT WORD RIGHT ARROW LEFT WORD RIGHT ARROW RIGHT WORD": "58", "LEFT ARROW SYMBOL": "64", "LEFT ARROW SYMBOL TWICE THEN THE WORDS RIGHT LEFT RIGHT THEN A RIGHT ARROW SYMBOL": "59", "LEFT LEFT RIGHT <- RIGHT ->": "57", "LEFT LEFT RIGHT LEFT RIGHT RIGHT": "67", "LIMA ECHO FOXTROT TANGO SPACE ALPHA ROMEO ROMEO OSCAR RISKY SPACE SIERRA YANKEE MIKE BRAVO OSCAR LIMA": "12", "LIMA ECHO FOXTROT TANGO SPACE ALPHA ROMEO ROMEO OSCAR WHISKEY SPACE SIERRA YANKEE MIKE BRAVO OSCAR LIMA": "65",
+    "LITERALLY BLANK": "15", "LITERALLY NOTHING": "14", "NO COMMA LITERALLY NOTHING": "24", "NO REALLY STOP": "51", "NO REALLY.": "52", "NO, LITERALLY NOTHING": "25", "NOTHING": "12", "NOVEBMER OSCAR SPACE, LIMA INDIA TANGO ECHO ROMEO ALPHA LIMA LIMA YANKEE SPACE NOVEMBER OSCAR TANGO HOTEL INDIA NOVEMBER GOLF": "07", "NOVEBMER OSCAR SPACE, LIMA INDIGO TANGO ECHO ROMEO ALPHA LIMA LIMA YANKEE SPACE NOVEMBER OSCAR TANGO HOTEL INDEGO NOVEMBER GOLF": "29", "OK WORD FOR WORD LEFT ARROW SYMBOL TWICE THEN THE WORDS RIGHT LEFT RIGHT THEN A RIGHT ARROW SYMBOL": "60", "ONE 3 2 4": "34", "ONE 3 2 FOUR": "38", "ONE AND THEN 3 TO 4": "47",
+    "ONE IN LETTERS 3 2 4 IN NUMBERS": "35", "ONE THREE 2 WITH TWO OHS 4": "43", "ONE THREE TO FOR": "39", "ONE THREE TWO FOUR": "37", "ONE WORD THEN PUNCTUATION. STOP STOP.": "09", "PERIOD": "79", "PERIOD PERIOD": "82", "PERIOD TWICE": "83", "RIGHT ALL IN WORDS STARTING NOW ONE TWO THREE FOUR": "49", "SEVEN WORDS FIVE WORDS THREE WORDS THE PUNCTUATION FULLSTOP": "05", "STOP DOT PERIOD": "50",
+    "STOP STOP": "75", "STOP TWICE": "76", "STOP.": "74", "THAT'S WHAT IT'S SHOWING": "21", "THE FOLLOWING SENTENCE THE WORD NOTHING": "27", "THE PHRASE THE WORD LEFT": "71", "THE PHRASE THE WORD NOTHING": "26", "THE PHRASE THE WORD STOP TWICE": "91", "THE PHRASE: THE PUNCTUATION FULLSTOP": "93", "THE PUNCTUATION FULLSTOP": "92",
+    "THE WORD BLANK": "01", "THE WORD LEFT": "70", "THE WORD ONE AND THEN THE NUMBERS 3 2 4": "48", "THE WORD STOP TWICE": "94", "THERE ARE THREE WORDS NO PUNCTUATION READY? STOP DOT PERIOD": "50", "THERE'S NOTHING": "18", "THIS ONE IS ALL ARROW SYMBOLS NO WORDS": "28", "THREE WORDS THE PUNCTUATION FULLSTOP": "99", "THREE WORDS THE WORD STOP": "73", "WAIT FORGET EVERYTHING I JUST SAID, TWO WORDS THEN TWO SYMBOLS THEN TWO WORDS: <- <- RIGHT LEFT -> ->": "16", "WE JUST BLEW UP": "42"
     }
 
     def __check(self, w):
@@ -29,20 +26,17 @@ class crazytalk(edgework):
             word (str): The word that appears on the module. Use symbols, arrows uses minus sign. (Example: "<-", "1 3 2 4")
         '''
         super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
-        self.__word = self.__check(word.lower())
+        self.__word = self.__check(word.upper())
     
     def solve(self):
         '''
         Solve the Crazy Talk module
 
         Returns:
-            Tuple (int, int): The last second digit to flick the level. Index 0 is the first flick, index 1 is the second flick
-        
-        Raises:
-            ValueError: If no word cannot be found in the word bank
+            Tuple (list [str, int, int]): The confirmed sentence and the last second digit to flick the level. Lists represents all possible answers given by word parameter. Index 0 of sub-list shows the confirmed sentence, Index 1 is the first flick, index 2 is the second flick
         '''
-        try:
-            ans = self.__bank[self.__word]
-            return tuple([int(ans[0]), int(ans[1])])
-        except:
-            raise ValueError("Word cannot be found! Make sure to include any symbols. Arrows represented with single line (-> or <-)")
+        ans = []
+        for a in self.__bank:
+            if bool(re.search(self.__word, a)):
+                ans.append([a, self.__bank[a][0], self.__bank[a][1]])
+        return tuple(ans)

@@ -56,7 +56,7 @@ class x01(edgework):
             elif colnum in range(3,6): colnum=1
             else: colnum=2
 
-            rownum = ((self.batt-self.hold))+len(self._sndigit)
+            rownum = ((self.batt-self.hold)*2)+len(self._sndigit)
             match rownum:
                 case rownum if rownum in range(0,3): rownum=[74,53,79]
                 case rownum if rownum in range(3,5): rownum=[62,41,70]
@@ -127,6 +127,7 @@ class x01(edgework):
                     new_score = current_score+(seg*-1)
                     if self.__checkrestriction(new_throws, darts, restrictions):
                         queue.append([new_score, new_throws, darts_used+1])
+                        queue = sorted(queue, key=lambda x: x[0], reverse=True)
         return throws
 
     def solve(self, text:bool=True):

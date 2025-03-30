@@ -9,7 +9,7 @@ class roundkeypad(edgework):
         ['pitchfork', 'smileyface', 'bt', 'rightc', 'paragraph', 'dragon', 'filledstar'],
         ['six', 'euro', 'tracks', 'ae', 'pitchfork', 'nwithhat', 'omega']
     ]
-    __namelist = ['balloon', 'euro', 'copyright', 'six', 'pitchfork', 'at', 'pumpkin', 'paragraph', 'smileyface', 'upsidedowny', 'leftc', 'cursive', 'bt', 'tracks', 'squigglyn', 'doublek', 'squidknife', 'rightc', 'ae', 'hollowstar', 'meltedthree', 'hookn', 'questionmark', 'dragon', 'nwithhat', 'reversedc', 'filledstar', 'omega']
+    __namelist = ['balloon', 'euro', 'copyright', 'six', 'pitchfork', 'at', 'pumpkin', 'paragraph', 'smileyface', 'upsidedowny', 'leftc', 'cursive', 'bt', 'tracks', 'squigglyn', 'doublek', 'squidknife', 'rightc', 'ae', 'hollowstar', 'meltedthree', 'hookn', 'questionmark', 'dragon', 'nwithhat', 'filledstar', 'omega']
     __symboltable = [
 	    ['Ϙ', 'Ѧ', 'ƛ', 'Ϟ', 'Ѭ', 'ϗ', 'Ͽ'],
 	    ['Ӭ', 'Ϙ', 'Ͽ', 'Ҩ', '☆', 'ϗ', '¿'],
@@ -26,16 +26,18 @@ class roundkeypad(edgework):
         elif len(set([True if a in self.__namelist else False for a in s]))==2 and len(set([True if a in self.__symbollist else False for a in s]))==2: raise ValueError("List must be consistent. Either all symbols or all names")
         else: return s
 
-    def __init__(self, edgework: edgework, symbols: list):
+    def __init__(self, edgework: edgework, symbols:list[str]|None=None):
         '''
         Initialize a roundkeypad instance
 
         Args:
             edgework (edgework): The edgework of the bomb
-            symbols (list [str]): The symbols or name of the symbols that appears on the bomb
+            symbols (list [str]): The symbols or name of the symbols that appears on the bomb. Use showNames() to get the names of each symbols
         '''
         super().__init__(edgework.batt, edgework.hold, edgework.ind, edgework.ports, edgework.sn, edgework.total_modules, edgework.needy, edgework.strikes)
-        self.__symbols = self.__check(symbols)
+        if symbols is not None:
+            self.__symbols = self.__check(symbols)
+        else: self.__symbols = None
     
     def __calculate(self, u):
         if u==1: s = self.__symboltable
@@ -56,6 +58,16 @@ class roundkeypad(edgework):
         Returns:
             Tuple (str): The correct order of presses
         '''
+        if self.__symbols is None: raise ValueError("symbols has not been initialized yet")
         use = 0 if all([True if a in self.__namelist else False for a in self.__symbols]) else 1
         row = self.__calculate(use)
         return tuple([a for a in self.__symbols if a not in row])
+    
+    def showNames(self):
+        '''
+        Show the accepted names for the symbols
+
+        Returns:
+            Dict (str, str): The keys are the the symbols, while the values are the names of that said symbols
+        '''
+        return {a:b for a,b in zip(self.__symbollist, self.__namelist)}
